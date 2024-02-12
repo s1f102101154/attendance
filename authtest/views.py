@@ -26,7 +26,7 @@ def home(request):
                 pass  # 退勤記録がない場合の処理
         return redirect('home')
 
-    return render(request, 'authtest/home.html', {})
+    return render(request, 'authtest/index.html', {})
 
 @login_required
 def private_page(request):
