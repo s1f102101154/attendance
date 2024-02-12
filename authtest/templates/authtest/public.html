@@ -1,6 +1,14 @@
 <html lang="ja"><head><meta charset="utf-8"></head>
   <body>
-    <h1>Public</h1>
-    <p>Public contents</p>
+
+    <h2>出退勤記録</h2>
+    <ul>
+        {% for attendance in attendances %}
+            <li>社員ID: {{ attendance.employee_id }}, 出勤: {{ attendance.check_in }}, 退勤: {{ attendance.check_out }}</li>
+        {% empty %}
+            <li>No records found.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'home' %}">ホームに戻る</a></p>
   </body>
 </html>
